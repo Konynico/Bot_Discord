@@ -13,6 +13,6 @@ bot.color = "#0002E1";
 
 loadCommands(bot)
 loadEvents(bot)
-bot.login(config.token);
+bot.login(process.env.token);
 
 
