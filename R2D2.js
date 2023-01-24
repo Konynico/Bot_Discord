@@ -1,9 +1,5 @@
 console.log("test");
 
-const PORT = process.env.PORT || 3000;
-bot.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
 
 const Discord = require("discord.js");
 const loadCommands = require("./Loader/loadCommands");
@@ -11,6 +7,11 @@ const loadEvents = require("./Loader/loadEvents");
 const config = require("./config")
 
 bot = new Discord.Client({intents : 3276799})
+
+const PORT = process.env.PORT || 3000;
+bot.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 
 bot.commands = new Discord.Collection()
