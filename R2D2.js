@@ -8,9 +8,13 @@ const config = require("./config")
 
 bot = new Discord.Client({intents : 3276799})
 
-const PORT = process.env.PORT || 3000;
-console.log(`Our app is running on port ${ PORT }`)
+const http = require('http');
 
+const server = http.createServer((req, res) => {
+    res.end('Voilà la réponse du serveur !');
+});
+
+server.listen(process.env.PORT || 3000);
 
 
 bot.commands = new Discord.Collection()
