@@ -1,5 +1,5 @@
 console.log("test");
-require
+var port = process.env['PORT'] || 3000;
 const Discord = require("discord.js");
 const loadCommands = require("./Loader/loadCommands");
 const loadEvents = require("./Loader/loadEvents");
