@@ -4,7 +4,7 @@ module.exports = {
 
         name: "ticket",
         description: "Envoie l'embed des tickets",
-        permissions: "913779744053538857",
+        permissions: Discord.PermissionFlagsBits.BanMembers,
         category: "Administration",
         dm: false,
         options: [],
