@@ -6,7 +6,7 @@ module.exports = async (bot, interaction) => {
 
         let entry = interaction.options.getFocused()
         
-        if (interaction.commandName == "help") {
+        if (interaction.commandName == "help2") {
             let choices = bot.commands.filter(cmd => cmd.name.includes(entry))
             await interaction.respond(entry === "" ? bot.commands.map(cmd => ({name: cmd.name, value: cmd.name})) : choices.map(choices => ({name: choices.name, value: choices.name})))
         }
