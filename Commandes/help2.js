@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports = {
 
-        name: "help",
+        name: "help2",
         description: "Donne les commandes du bot",
         permissions: "Aucune",
         category: "Informations",
