@@ -1,7 +1,7 @@
 console.log("test");
 
 
-const Discord = require("discord.js");
+const Discord = require(".js");
 const loadCommands = require("./Loader/loadCommands");
 const loadEvents = require("./Loader/loadEvents");
 const config = require("./config")
