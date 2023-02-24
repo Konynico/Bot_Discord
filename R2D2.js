@@ -1,6 +1,5 @@
 console.log("test");
 const Player = require("discord-player");
-const player = require('play-sound')
 const Discord = require("discord.js");
 const loadCommands = require("./Loader/loadCommands");
 const loadEvents = require("./Loader/loadEvents");
@@ -13,7 +12,7 @@ bot = new Discord.Client({intents : 3276799})
 bot.player = new Player.Player(bot,{
     leaveOnEnd: true,
     leaveOnEmpty: true,
-    volume: 70,
+    volume: 10,
     ytdlOptions: {
         filter: 'audioonly',
         quality: 'highestaudio',
