@@ -6,7 +6,7 @@ module.exports = async (bot, interaction) => {
 
         let entry = interaction.options.getFocused()
         
-        if (interaction.commandName == "help2") {
+        if (interaction.commandName == "help") {
             let choices = bot.commands.filter(cmd => cmd.name.includes(entry))
             await interaction.respond(entry === "" ? bot.commands.map(cmd => ({name: cmd.name, value: cmd.name})) : choices.map(choices => ({name: choices.name, value: choices.name})))
         }
@@ -26,20 +26,28 @@ module.exports = async (bot, interaction) => {
 
     if(interaction.isButton()){
         if(interaction.customId === "ticket"){
-            const channel = interaction.guild.channels.cache.find(ch => ch.name === `ticket-de-konynico`);
-            if (channel) {
-                try {
-                    interaction.reply({content: `Votre ticket a déja été créer : ${channel}`,ephemeral: true})
+            
+
+            if(!interaction.member.permissions.has(Discord.PermissionFlagsBits.CreatePublicThreads)){
+                try {await user.send("Vous n'avez pas le role requis pour créer un ticket")
                 
                 } catch (err) {}
-
             }
             else{
-            let channel = await interaction.guild.channels.create({
-                name: `ticket de ${interaction.user.username}`,
-                type: Discord.ChannelType.GuildText,
-    
-            })
+                const channel = interaction.guild.channels.cache.find(ch => ch.name === `ticket-de-konynico`);
+                if (channel) {
+                    try {
+                        interaction.reply({content: `Votre ticket a déja été créer : ${channel}`,ephemeral: true})
+                    
+                    } catch (err) {}
+
+                }
+                else{
+                let channel = await interaction.guild.channels.create({
+                    name: `ticket de ${interaction.user.username}`,
+                    type: Discord.ChannelType.GuildText,
+        
+                })
 
             await channel.permissionOverwrites.create(interaction.guild.roles.everyone, {
                 ViewChannel: false
@@ -91,6 +99,6 @@ module.exports = async (bot, interaction) => {
             } catch (err) {}
 
             await interaction.channel.delete( )
-        }
+        }}
     }
 }
