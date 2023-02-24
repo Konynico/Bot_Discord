@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'sondage',
     description: 'Créer un sondage',
-    permissions: "Aucune",
+    permissions: Discord.PermissionFlagsBits.CreatePublicThreads,
     category: "Loisir",
     dm: true,
     options: [{

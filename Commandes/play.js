@@ -19,9 +19,9 @@ module.exports = {
         ],
 
 
-        async run(bot, message) {
+        async run(bot, message, args) {
 
-            let song = message.options.getString("musique")
+            let song = args.getString("musique")
             if(!message.member.voice.channel) return message.reply("Vous devez être dans un salon vocal pour utiliser cette commande !")
             if((await message.guild.members.fetchMe()).voice.channel && (await message.guild.members.fetchMe()).voice.channel.id !== message.member.voice.channel.id) return message.reply("Vous devez être dans le même salon vocal que moi pour utiliser cette commande !")
 

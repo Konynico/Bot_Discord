@@ -19,7 +19,14 @@ module.exports = {
                 type: "string",
                 name: "temps",
                 description: "Temps avant supréssion du role (en heure)",
-                required: false,
+                required: true,
+                autocomplete: false
+            },
+            {
+                type: "string",
+                name: "role",
+                description: "role a donner",
+                required: true,
                 autocomplete: false
             }
         ],
@@ -27,7 +34,7 @@ module.exports = {
         async run(bot, message, args) {
         let user = await bot.users.fetch(args._hoistedOptions[0].value)
         let member = message.guild.members.cache.get(user.id)
-        let role = message.guild.roles.cache.find(role => role.name === "Whitelisted");
+        let role = message.guild.roles.cache.find(role => role.name === args.getString("role"));
         member.roles.add(role).then(() => {
             message.channel.send(`Le rôle : **${role.name}** a été donné à ${member.user.username}`);
       

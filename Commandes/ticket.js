@@ -24,6 +24,10 @@ module.exports = {
             .setLabel("Créer un ticket")
             .setStyle(Discord.ButtonStyle.Success)
             .setEmoji("💌"))
+            
+
+            
+            
 
             await message.reply({embeds: [Embed], components: [btn]})
         }
