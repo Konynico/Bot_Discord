@@ -14,7 +14,7 @@ module.exports = {
         async run(bot, message, args) {
 
           
-            const queue = bot.player.getQueue(message.guild.id);
+            const queue = await bot.player.createQueue(message.guild.id);
             if(!queue.connection || !queue.playing) return message.reply("le bot n'est pas connecté ou ne joue pas de musique !")
 
             queue.destroy();
