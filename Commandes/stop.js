@@ -6,7 +6,7 @@ module.exports = {
         description: "stop la musique",
         permissions: "Aucune",
         dm: false,
-        category: "Loisir",
+        category: "Musique",
         autocomplete: false,
         options: [],
 
