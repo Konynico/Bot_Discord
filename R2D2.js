@@ -36,8 +36,6 @@ server.listen(process.env.PORT || 3000);
 bot.commands = new Discord.Collection()
 bot.color = "#0002E1";
 
-//bot.login(process.env.token);
-bot.login(config.token);
 
 loadCommands(bot)
 loadEvents(bot)
