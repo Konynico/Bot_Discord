@@ -5,7 +5,7 @@ module.exports = {
  
     name: "play",
     description: "écouter une musique.",
-    category: ":Music: | Music",
+    category: ":Musique",
     permission: "Aucune",
     dm: false,
     options: [
