@@ -24,7 +24,7 @@ module.exports = {
             if(args.getString("type") === "agent"){
 
                 let array = ["reyna", "breach" ,"sova","astra","brimstone","chamber","cypher","fade","harbor","jett","kayo","killjoy","neon","omen","phoenix","raze","sage","skye","yoru","viper","gekko"]
-                let select = array[Math.floor(Math.random() * 20)]
+                let select = array[Math.floor(Math.random() * 21)]
                 const file = new Discord.AttachmentBuilder(`./image/${select}.png`);
                
 
