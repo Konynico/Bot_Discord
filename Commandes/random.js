@@ -23,7 +23,7 @@ module.exports = {
         async run(bot, message, args) {
             if(args.getString("type") === "agent"){
 
-                let array = ["reyna", "breach" ,"sova","astra","brimstone","chamber","cypher","fade","harbor","jett","kayo","killjoy","neon","omen","phoenix","raze","sage","skye","yoru","viper"]
+                let array = ["reyna", "breach" ,"sova","astra","brimstone","chamber","cypher","fade","harbor","jett","kayo","killjoy","neon","omen","phoenix","raze","sage","skye","yoru","viper","gekko"]
                 let select = array[Math.floor(Math.random() * 19)]
                 const file = new Discord.AttachmentBuilder(`./image/${select}.png`);
                
