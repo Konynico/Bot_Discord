@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(process.env.PORT || 3000);
 
-bot.login(process.env.token);
+//bot.login(process.env.token);
 bot.commands = new Discord.Collection()
 bot.color = "#0002E1";
 
