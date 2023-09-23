@@ -38,8 +38,10 @@ module.exports = {
           message.channel.send({embeds: [embed]});
         }
       });
-      
+      bot.db.end();
+
     }
+
 
     catch (err) {
       console.error("Une erreur est survenue lors de la récupération de la money :", err);

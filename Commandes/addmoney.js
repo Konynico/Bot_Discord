@@ -53,6 +53,9 @@ module.exports = {
         }
       });
 
+      //fermer la connexion
+      bot.db.end();
+
 
 
 
