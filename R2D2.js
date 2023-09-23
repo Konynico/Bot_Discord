@@ -40,7 +40,6 @@ bot.commands = new Discord.Collection()
 bot.color = "#0002E1";
 
 
-
 loadCommands(bot)
 loadEvents(bot)
 loadPlayerEvents(bot)
