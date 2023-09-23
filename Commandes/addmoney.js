@@ -43,18 +43,17 @@ module.exports = {
       bot.db.query(`SELECT * FROM money WHERE user = '${membre}'`, (err, row) => {
         if (row.length < 1) {
           bot.db.query(`INSERT INTO money (user, value) VALUES ('${membre}', '${montant}')`);
-          message.channel.send(`Nouvel utilisateur **${membre.username}** ajouté avec un montant de **${montant}**.`);
+          message.reply(`Nouvel utilisateur **${membre.username}** ajouté avec un montant de **${montant}**.`);
         }
         else{
           currentMoney = row[0].value;
           newMoney = currentMoney + montant;
           bot.db.query(`UPDATE money SET value = '${newMoney}' WHERE user = '${membre}'`);
-          message.channel.send(`L'utilisateur **${membre.username}** a gagné **${montant}**, il a actuellement un montant de **${newMoney}** sur son compte.`); 
+          message.reply(`L'utilisateur **${membre.username}** a gagné **${montant}**, il a actuellement un montant de **${newMoney}** sur son compte.`); 
         }
       });
 
-      //fermer la connexion
-      bot.db.end();
+      
 
 
 
