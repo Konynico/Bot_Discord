@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "addMoney",
+  name: "addmoney",
   description: "Permet d'ajouter de l'argent à un membre",
   permissions: Discord.PermissionFlagsBits.BanMembers,
   category: "Administration",
