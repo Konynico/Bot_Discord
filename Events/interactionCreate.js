@@ -14,10 +14,7 @@ module.exports = async (bot, interaction) => {
             let choices = ["agent", "map"];
             let filteredChoices = choices.filter(choice => choice.includes(entry));
             await interaction.respond(entry === "" ? choices.map(choice => ({name: choice, value: choice})) : filteredChoices.map(filteredChoice => ({name: filteredChoice, value: filteredChoice})));}
-        if (interaction.commandName == "random") {
-            let choices = ["show", "add", "remove"];
-            let filteredChoices = choices.filter(choice => choice.includes(entry));
-            await interaction.respond(entry === "" ? choices.map(choice => ({name: choice, value: choice})) : filteredChoices.map(filteredChoice => ({name: filteredChoice, value: filteredChoice})));}
+        
        
     
     }
