@@ -26,7 +26,7 @@ module.exports = {
   async run(bot, message, args, db) {
     if(args.getString("action") === "show"){
     // Récupérer l'ID de l'utilisateur
-      const membre = await bot.users.fetch(args._hoistedOptions[0].value);
+      const membre = await bot.users.fetch(args._hoistedOptions[1].value);
 
       try {
 
@@ -61,7 +61,7 @@ module.exports = {
 
     // Extraire les arguments du message
     const montant = parseInt(args.getString("argent"));
-    const membre = await bot.users.fetch(args._hoistedOptions[0].value);
+    const membre = await bot.users.fetch(args._hoistedOptions[1].value);
 
     // Vérifier si le montant est un nombre valide
     if (isNaN(montant) || montant <= 0) {
@@ -93,7 +93,7 @@ module.exports = {
 
     // Extraire les arguments du message
     const montant = parseInt(args.getString("argent"));
-    const membre = await bot.users.fetch(args._hoistedOptions[0].value);
+    const membre = await bot.users.fetch(args._hoistedOptions[1].value);
 
     // Vérifier si le montant est un nombre valide
     if (isNaN(montant) || montant <= 0) {
@@ -102,8 +102,6 @@ module.exports = {
 
     try {
       // Delete the existing user entry from the database, if it exists
-    
-
 
       bot.db.query(`SELECT * FROM money WHERE user = '${membre}'`, (err, row) => {
         if (row.length < 1) {
