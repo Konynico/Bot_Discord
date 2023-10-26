@@ -21,61 +21,13 @@ module.exports = {
         
 
         async run(bot, message) {
-            if(message.author.id !== "451693463742840842") return message.reply("Tu n'as pas accès à cette commande !")
+        //si créer alors créer une fiche avec les infos de base et la sauvegarder dans la bdd avec l'id de l'utilisateur
+        //si modifier alors modifier la fiche de l'utilisateur
+        //si voir alors afficher la fiche de l'utilisateur
+        //si supprimer alors supprimer la fiche de l'utilisateur
 
-            if(message.author.id === "451693463742840842"){
 
-                if(message.getString("action") === "créer"){
 
-                    let Embed = new Discord.EmbedBuilder()
-                    .setColor(bot.color)
-                    .setTitle("Création d'une fiche de personnage")
-                    .setDescription("Veuillez répondre aux questions suivantes :")
-                    .setTimestamp()
-                    .setFooter({text: bot.user.username, iconURL: bot.user.displayAvatarURL({dynamic: true})})
-
-                    await message.reply({embeds: [Embed]})
-
-                    let Embed2 = new Discord.EmbedBuilder()
-                    .setColor(bot.color)
-                    .setTitle("Quel est le nom de votre personnage ?")
-                    .setTimestamp()
-                    .setFooter({text: bot.user.username, iconURL: bot.user.displayAvatarURL({dynamic: true})})
-
-                    await message.reply({embeds: [Embed2]})
-
-                    const filter = m => m.author.id === message.author.id;
-                    const collector = message.channel.createMessageCollector({ filter, max: 1, time: 60000 });
-
-                    collector.on('collect', async m => {
-
-                        let nom = m.content
-
-                        let Embed3 = new Discord.EmbedBuilder()
-                        .setColor(bot.color)
-                        .setTitle("Quel est le prénom de votre personnage ?")
-                        .setTimestamp()
-                        .setFooter({text: bot.user.username, iconURL: bot.user.displayAvatarURL({dynamic: true})})
-
-                        await message.reply({embeds: [Embed3]})
-
-                        const filter = m => m.author.id === message.author.id;
-                        const collector = message.channel.createMessageCollector({ filter, max: 1, time: 60000 });
-
-                        collector.on('collect', async m => {
-
-                            let prenom = m.content
-
-                            let Embed4 = new Discord.EmbedBuilder()
-                            .setColor(bot.color)
-                            .setTitle("Quel est l'âge de votre personnage ?")
-                            .setTimestamp()
-                            .setFooter({text: bot.user.username, iconURL: bot.user.displayAvatarURL({dynamic: true})})
-
-                            await message.reply({embeds: [Embed4]})
-
-                            const filter = m => m.author.id === message.author.id;
-                            const collector = message.channel
            
         }
 }       
