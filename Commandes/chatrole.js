@@ -28,7 +28,7 @@ module.exports = {
         const role = message.guild.roles.cache.find(role => role.name === args.getString("role"));
         const msg = args.getString("message")
         const embed = new Discord.EmbedBuilder()
-        .setTitle("msg")
+        .setTitle(msg)
         .setColor(bot.color)
         .setTimestamp()
         .setFooter({text: `Rôle créer par ${message.user.username}`, iconURL: message.user.displayAvatarURL({dynamic: true})})
